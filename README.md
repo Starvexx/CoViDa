@@ -7,6 +7,9 @@ Version: 0.1
 Due to the events of the Covid-19 pandemic outbreak, I have decided to create a small and simple tool 
 to visually depict casenumbers of the disease. I got the idea from [Worldometer](https://www.worldometers.info/coronavirus/)
 when I found out that not all countries have graphical representations on the course of the outbreak.
+However, the fine people that run Worldometer seem to update their webpage to provide graphs for all
+countries over time. For instance this was the case for Austria and I started this project before they 
+provided provided graphs. Nevertheless I decided to keep working on it.
 
 ## What is this?
 This is supposed to become a simple to use Python script that can plot the data on the Covid-19 outbreak.
