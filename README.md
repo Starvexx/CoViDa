@@ -62,5 +62,6 @@ And to execute either copy the script to a folder that is part of your `$PATH` o
 folder containing the script.
 - If the script was copied to a `$PATH` folder enter the following into a terminal: `corona.py -f /path/to/file.csv`
 - If you run from the folder the script is in enter this: `./corona.py -f /path/to/data.csv -t 30`
+
 The `-t` option sets the number of days you want to plot the fitted functions. For instance, `-t 30`
 will plot 30 days, starting from the first date listed in the datafile.
