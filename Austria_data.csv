@@ -1,4 +1,4 @@
-year, month, day, tested, cases, deaths, cured
+year, month, day, tested, cases, deaths, recovered
 2020, 2, 25, nan, 2, 0, 0
 2020, 2, 26, nan, 2, 0, 0
 2020, 2, 27, nan, 5, 0, 0
