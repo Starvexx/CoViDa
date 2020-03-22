@@ -37,3 +37,25 @@ Simply open a Terminal and enter the following:
 ```
 pip install <package>
 ```
+## Dataformat
+So that the program can process the data, is has to be provided in a specific format. The script reads
+as `.csv` file with seven columns. The first line in the file is as follows and defines the columns.
+```
+year, month, day, tested, infected, dead, recovered
+```
+Additionaly an example file is present in the repository. It holds the data for Austria since the 
+first case was officialy confirmed.
+
+If you want to plot the data for your country, province or city, you will have to research the past
+development of cases on your own and store them to a `.csv` file of the above described format. 
+
+## Usage
+To run the script you first need to make it executable. On Unix machines simply `cd` to the folder 
+containing the script and execute the following command in a terminal.
+```
+chmod u+x corona.py
+```
+And to execute either copy the script to a folder that is part of your `$PATH` or or run from the 
+folder containing the script.
+- If the script was copied to a `$PATH` folder enter the following into a terminal: `corona.py -f /path/to/file.csv`
+- If you run from the folder the script is in enter this: `./corona.py -f /path/to/data.csv`
