@@ -33,7 +33,8 @@ if __name__ == "__main__":
                         help='The datafile that contains the corona data.')
     parser.add_argument('--runtime', '-t',
                         type=int,
-                        help='Number of days to plot the fitted function.')
+                        help='Number of days to plot the fitted function.',
+                        default=0)
     parser.add_argument('--logaritmic', '-l',
                         action='store_true',
                         help='Plot the data on logarithmic scale.',
@@ -72,10 +73,10 @@ if __name__ == "__main__":
     # popt_t, pcov_t = curve_fit(func, days_new, tested[valid])
 
     # The actual timeline
-    timeline = np.arange(737480.0, 737480.0 + args.runtime, 0.1)
+    timeline = np.arange(days[0], days[0] + len(days) + args.runtime - 1, 0.1)
     # t_new is the number of days that shall be plotted using the parameters
     #   popt retrieved from the fit.
-    t_new = np.arange(0.0, args.runtime, 0.1)
+    t_new = np.arange(0.0, len(days) + args.runtime - 1, 0.1)
     # The datapoints for the extrapolated function, n. of infected
     fitted_i = []
     # The datapoints for the extrapolated function, nr. of tests
@@ -87,7 +88,7 @@ if __name__ == "__main__":
     # ======================================================================== #
     # Plot the data.
 
-    formatter = DateFormatter('%d. %m. %Y')
+    formatter = DateFormatter('%d.%m.%Y')
 
     fig = plt.figure(figsize=(8.27,11.69))
     ax1 = fig.add_subplot(311)
@@ -142,4 +143,7 @@ if __name__ == "__main__":
     fig.suptitle(f'Corona data for {country}.')
     plt.subplots_adjust(top=0.92, bottom=0.1, left=0.11,
                         right=0.92, hspace=0.42, wspace=0.3)
+
+    outfile = args.datafile.replace('_data.csv', '_plots.pdf')
+    plt.savefig(outfile, format='pdf')
     plt.show()
